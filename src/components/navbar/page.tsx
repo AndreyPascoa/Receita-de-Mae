@@ -1,21 +1,30 @@
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { style } from "./style";
-import { NavbarItem, NavbarProps } from "../../types/navbarType";
+import { NavbarItem } from "../../types/navbarType";
+import { Heart, House, List, MessageSquare } from "lucide-react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Itens: NavbarItem[] = [
-    { label: 'Home', route: 'Home', icon: 'home' },
-    { label: 'Search', route: 'Categoria', icon: 'search' },
-    { label: 'Profile', route: 'Favorito', icon: 'user' },
-    { label: 'Profile', route: 'Lista', icon: 'user' },
+    { label: 'Home', route: 'Home', icon: House },
+    { label: 'Search', route: 'Categoria', icon: MessageSquare },
+    { label: 'Profile', route: 'Favorito', icon: Heart },
+    { label: 'Profile', route: 'Lista', icon: List },
 ]
 
-export default function NavbarPage({} : NavbarProps) {
+export default function NavbarPage() {
+
+    const navigate = useNavigation();    
+
+    function handleNavigation(route: string) {
+        navigate.navigate(route as never);
+    }
+
     return (
         <View style={style.container}>
             {Itens.map((item, index) => (
-                <View key={index}>
-                    {/* Render navbar item here */}
-                </View>
+                <TouchableOpacity onPress={() => handleNavigation(item.route)} key={index} style={style.button}>
+                    <item.icon color="#45403fff" size={24} />
+                </TouchableOpacity>
             ))}
         </View>
     )
