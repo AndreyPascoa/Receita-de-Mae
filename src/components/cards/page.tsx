@@ -11,7 +11,7 @@ export function CardsComponent({ id, title, time, servings, imageUrl }: CardProp
             <Text style={styles.title}>{title}</Text>
             <View style={styles.descriptionContainer}>
                 <Clock size={14} color={'#E07A5F'}/>
-                <Text style={styles.description}>{time} - {servings}</Text>
+                <Text style={styles.description}>{time} - {servings} Porç{Number(servings) > 1 ? 'ões' : 'ão'}</Text>
             </View>
         </View>
     )

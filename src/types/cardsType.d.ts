@@ -3,5 +3,6 @@ export interface CardProps {
     title: string;
     time: string;
     servings: string;
-    imageUrl: string;
+    imageUrl?: string;
+    categoryId: string;
 }

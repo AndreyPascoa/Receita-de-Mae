@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
       <RootStack />
       <NavbarPage />
     </NavigationContainer>

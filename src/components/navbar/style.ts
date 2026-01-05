@@ -10,14 +10,17 @@ export const style = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: '#f1f1f1',
-        borderTopColor: '#45403fff',
-        borderTopWidth: 1,
+        backgroundColor: '#fefcfa',
     },
     button: {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
         gap: 5,
+    },
+    description: {
+        color: '#45403fff',
+        fontSize: 12,
+        fontFamily: 'Inter',
     }
 })

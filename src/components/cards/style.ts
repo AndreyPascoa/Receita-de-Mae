@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         gap: 5,
-        backgroundColor: '#F4F1DE',
+        backgroundColor: '#fdf8f4',
         elevation: 3,
         overflow: 'hidden',
     },
