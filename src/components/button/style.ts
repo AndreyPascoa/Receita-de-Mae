@@ -1,19 +1,22 @@
 import { StyleSheet } from "react-native";
 
-export const style =  StyleSheet.create({
+export const style = StyleSheet.create({
     container: {
-        padding: 10,
-        margin: 5,
-        backgroundColor: '#fff',
-        elevation: 2,
-        borderRadius: 5,
+        paddingVertical: 12,
+        margin: 6,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
         width: '45%',
+        elevation: 1,
+        shadowColor: '#000',
+        shadowOpacity: 0.08,
+        shadowRadius: 4,
     },
     text: {
-        fontFamily: 'Arial',
-        fontSize: 16,
-        color: '#000000',
+        fontSize: 15,
+        color: '#5A4E42',
+        fontWeight: '500',
     }
 })

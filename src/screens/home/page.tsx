@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { style } from "./style";
 import { CardProps } from "../../types/cardsType";
 import { CardsComponent } from "../../components/cards/page";
@@ -45,28 +45,38 @@ export function HomePage() {
     }, [category]);
 
     return (
-        <View style={style.container}>
+        <ScrollView 
+            style={style.container}
+            contentContainerStyle={{ alignItems: 'center'}}
+        >
             <View style={style.titleContainer}>
                 <Text style={style.title}>Receita de Mãe</Text>
             </View>
 
-            <SearchPage />
+            <View style={style.searchContainer}>
+                <SearchPage />
+            </View>
 
-            <FlatList
-                data={listButton}
-                keyExtractor={(item) => item.value}
-                renderItem={({ item }) => (<ButtonPage {...item} />)}
-                numColumns={2}
-                columnWrapperStyle={{
-                    justifyContent: 'center',
-                }}
-            />
+            <View style={style.buttonContainer}>
+                {listButton.map((item) => (
+                    <ButtonPage
+                        key={item.value}
+                        {...item}
+                        onPress={() => setCategory(item.value === category ? undefined : item.value)}
+                    />
+                ))}
+            </View>
 
-            <FlatList
-                data={filterData}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <CardsComponent {...item} />}
-            />
-        </View>
+
+            <View style={style.foodRecipeContainer}>
+                <Text style={style.subtitle}>Receitas em Destaque</Text>
+
+                {
+                    filterData.map((item) => (
+                        <CardsComponent key={item.id} {...item} />
+                    ))
+                }
+            </View>
+        </ScrollView>
     )
 }
