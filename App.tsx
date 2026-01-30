@@ -1,12 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { HomePage } from './src/screens/home/page';
 import { NavigationContainer } from '@react-navigation/native';
-import NavbarPage from './src/components/navbar/page';
-import CategoriaPage from './src/screens/categoria/page';
-import FavoritoPage from './src/screens/favorito/page';
-import ListPage from './src/screens/lista/page';
 import { useFonts } from 'expo-font';
+import HomeScreen from './src/screens/home/page';
 
 export default function App() {
 
@@ -23,10 +19,7 @@ export default function App() {
   function RootStack() {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="Categoria" component={CategoriaPage} />
-        <Stack.Screen name="Favorito" component={FavoritoPage} />
-        <Stack.Screen name="Lista" component={ListPage} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     )
   }
@@ -35,7 +28,6 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="dark" />
       <RootStack />
-      <NavbarPage />
     </NavigationContainer>
   );
 }
