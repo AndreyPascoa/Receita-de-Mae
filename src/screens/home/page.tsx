@@ -6,6 +6,7 @@ import SearchComponent from "../../components/search/page";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import CardsComponent from "../../components/cards/page";
+import NavBarComponent from "../../components/navbar/page";
 
 export default function HomeScreen() {
 
@@ -22,8 +23,12 @@ export default function HomeScreen() {
                 {/* Search Component */}
                 <SearchComponent onChangeText={(text: string) => setSearchQuery(text.toLowerCase())} />
 
+                {/* Cards Component */}
                 <CardsComponent />
             </ScrollView>
+
+            {/* Navbar Component */}
+            <NavBarComponent />
         </SafeAreaProvider>
     )
 }
