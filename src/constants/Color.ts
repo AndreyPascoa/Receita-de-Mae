@@ -3,12 +3,14 @@ export const Colors = {
     background: '#F5F5FA',
     text: '#1c1d21a3',
     primary: '#ffd79b',
-    secundary: '#fff'
+    secundary: '#fff',
+    icons: '#1c1d21a3',
   },
   dark: {
     background: '#121212',
     text: '#ffffff',
     primary: '#0A84FF',
-    secundary: '#c8c8c8'
+    secundary: '#c8c8c8',
+    icons: '#ffffff',
   },
 };

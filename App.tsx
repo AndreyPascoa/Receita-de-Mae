@@ -5,10 +5,12 @@ import { useFonts } from 'expo-font';
 import HomeScreen from './src/screens/home/page';
 import SplashComponent from './src/services/splash/page';
 import { useState } from 'react';
+import { RootStackParamList } from './src/types/rootStackType';
+import ProfileScreen from './src/screens/profile/page';
 
 export default function App() {
 
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<RootStackParamList>();
   const [splashComplete, setSplashComplete] = useState<boolean>(false);
 
   const [loaded, error] = useFonts({
@@ -29,6 +31,7 @@ export default function App() {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
           <Stack.Screen name="Home" component={SpalshAnimation} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     )
   }
