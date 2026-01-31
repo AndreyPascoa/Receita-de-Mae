@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StatusBar, StyleSheet } from "react-native";
+
+const dimensions = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
     container: {
@@ -6,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     image: {
         height: 275,
-        width: '100%',
+        width: dimensions.width,
         backgroundColor: 'transparent',
     }
 })
