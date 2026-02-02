@@ -7,6 +7,7 @@ import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import CardsComponent from "../../components/cards/page";
 import NavBarComponent from "../../components/navbar/page";
+import DividerComponent from "../../components/divider/page";
 
 export default function HomeScreen() {
 
@@ -14,6 +15,7 @@ export default function HomeScreen() {
 
     return (
         <SafeAreaProvider>
+            {/*Container Principal com Scroll*/ }
             <ScrollView 
                 style={[{ backgroundColor: useThemeColor({}, 'background') }, styles.container]}
                 contentContainerStyle={{ alignItems: 'center' }}
@@ -22,6 +24,9 @@ export default function HomeScreen() {
 
                 {/* Search Component */}
                 <SearchComponent onChangeText={(text: string) => setSearchQuery(text.toLowerCase())} />
+
+                {/* Divider Component */}
+                <DividerComponent />
 
                 {/* Cards Component */}
                 <CardsComponent />
