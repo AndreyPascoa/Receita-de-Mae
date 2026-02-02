@@ -17,6 +17,7 @@ export default function NavBarComponent() {
 
     const navItens: Record<keyof RootStackParamList, NavItemIcon> = {
         Home: { icon: 'House' },
+        Favorites: { icon: 'Heart' },
         Profile: { icon: 'User', params: { userId: '' }},
     }
 

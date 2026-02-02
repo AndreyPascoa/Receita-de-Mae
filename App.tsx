@@ -7,6 +7,7 @@ import SplashComponent from './src/services/splash/page';
 import { useState } from 'react';
 import { RootStackParamList } from './src/types/rootStackType';
 import ProfileScreen from './src/screens/profile/page';
+import FavoriteScreen from './src/screens/favorite/page';
 
 export default function App() {
 
@@ -32,6 +33,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
           <Stack.Screen name="Home" component={SpalshAnimation} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Favorites" component={FavoriteScreen} />
       </Stack.Navigator>
     )
   }
