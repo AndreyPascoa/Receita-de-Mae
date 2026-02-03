@@ -12,7 +12,7 @@ export default function SearchComponent({onChangeText}: SearchType) {
                 style={[styles.input, {color: useThemeColor({}, 'text')}]} 
                 onChangeText={onChangeText}
                 cursorColor={useThemeColor({}, 'primary')}
-                placeholderTextColor={useThemeColor({}, 'primary')}
+                placeholderTextColor={useThemeColor({}, 'text')}
                 placeholder="Search..."
                 selectionColor={useThemeColor({}, 'primary')}
             />
