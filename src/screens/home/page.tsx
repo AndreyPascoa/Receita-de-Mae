@@ -90,8 +90,6 @@ export default function HomeScreen() {
                 </SectionComponent>
             </ScrollView>
 
-            {/* Navbar Component */}
-            <NavBarComponent />
         </SafeAreaProvider>
     )
 }

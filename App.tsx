@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { RootStackParamList } from './src/types/rootStackType';
 import ProfileScreen from './src/screens/profile/page';
 import FavoriteScreen from './src/screens/favorite/page';
+import NavBarComponent from './src/components/navbar/page';
+import MainLayout from './src/layout/main/page';
 
 export default function App() {
 
@@ -24,16 +26,27 @@ export default function App() {
 
   const SpalshAnimation = () => (
     splashComplete
-      ? <HomeScreen />
+      ?
+      <MainLayout>
+        <HomeScreen />
+      </MainLayout>
       : <SplashComponent onComplete={setSplashComplete} />
   )
 
   function RootStack() {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-          <Stack.Screen name="Home" component={SpalshAnimation} />
-          <Stack.Screen name="Profile" component={ProfileScreen} />
-          <Stack.Screen name="Favorites" component={FavoriteScreen} />
+        <Stack.Screen name="Home" component={SpalshAnimation} />
+        <Stack.Screen name="Profile" component={() => (
+          <MainLayout>
+            <ProfileScreen />
+          </MainLayout>
+        )} />
+        <Stack.Screen name="Favorites" component={() => (
+            <MainLayout>
+              <FavoriteScreen />
+            </MainLayout>
+          )} />
       </Stack.Navigator>
     )
   }
