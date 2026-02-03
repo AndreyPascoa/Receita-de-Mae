@@ -26,7 +26,7 @@ export default function NavBarComponent() {
     }
 
     return (
-        <BlurView style={styles.container}>
+        <BlurView intensity={100} tint="light" style={styles.container}>
             {
                 (Object.keys(navItens) as (keyof RootStackParamList)[]).map((item) => {
                     const Icon = icons[navItens[item].icon];
