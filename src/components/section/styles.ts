@@ -18,5 +18,8 @@ export const styles = StyleSheet.create({
     },
     contentContainer: {
         marginTop: 10,
+        gap: 10,
+        flexDirection: 'row',
+        paddingBottom: 10,
     },
 })

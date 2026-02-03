@@ -10,18 +10,32 @@ import NavBarComponent from "../../components/navbar/page";
 import DividerComponent from "../../components/divider/page";
 import FilterComponent from "../../components/filter/page";
 import { FilterType } from "../../types/filterType";
-import { Star } from "lucide-react-native";
 import SectionComponent from "../../components/section/page";
+import { CardsType } from "../../types/cardsType";
 
 export default function HomeScreen() {
 
     const [searchQuery, setSearchQuery] = useState<string>('');
+    
     const [filters, setFilters] = useState<FilterType[]>([
         { id: '1', name: 'Carnes', isPressed: false, icons: 'Beef' },
         { id: '2', name: 'Aves', isPressed: false, icons: 'Bird' },
         { id: '3', name: 'Peixes', isPressed: false, icons: 'Fish' },
         { id: '4', name: 'Vegetariano', isPressed: false, icons: 'Leaf' },
     ]);
+
+    const [cards, setCards] = useState<CardsType[]>([
+        { 
+            id: '1', 
+            title: 'Bife Acebolado', 
+            iconsFilters: ['Beef'] 
+        },
+        { 
+            id: '3', 
+            title: 'Frango Grelhado & Peixe Assado', 
+            iconsFilters: ['Bird', 'Fish'] 
+        },
+    ])
 
     const handlePressFilter = (id: string) => {
         setFilters(prevFilters =>
@@ -56,7 +70,23 @@ export default function HomeScreen() {
 
                 {/* Cards Component */}
                 <SectionComponent id="1" title="Destaques">
-                    <CardsComponent />
+                    {
+                        cards.map((card) => (
+                            <CardsComponent key={card.id} {...card} />
+                        ))
+                    }
+                </SectionComponent>
+
+                {/* Divider Component */}
+                <DividerComponent />
+
+                {/* Cards Component */}
+                <SectionComponent id="2" title="Mais Recentes">
+                    {
+                        cards.map((card) => (
+                            <CardsComponent key={card.id} {...card} />
+                        ))
+                    }
                 </SectionComponent>
             </ScrollView>
 

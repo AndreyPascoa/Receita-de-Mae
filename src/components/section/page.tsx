@@ -1,5 +1,5 @@
 import { SectionType } from "../../types/sectionType";
-import { Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useThemeColor } from "../../hooks/useThemeColor";
 import { styles } from "./styles";
 
@@ -18,9 +18,13 @@ export default function SectionComponent({ id, title, children }: SectionType) {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.contentContainer}>
+            <ScrollView 
+                contentContainerStyle={styles.contentContainer} 
+                horizontal 
+                showsHorizontalScrollIndicator={false}
+            >
                 {children}
-            </View>
+            </ScrollView>
         </View>
     )
 }
