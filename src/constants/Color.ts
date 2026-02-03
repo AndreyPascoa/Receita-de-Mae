@@ -5,6 +5,7 @@ export const Colors = {
     primary: '#ffd79b',
     secundary: '#fff',
     icons: '#1c1d21a3',
+    button: 'orange'
   },
   dark: {
     background: '#121212',
@@ -12,5 +13,6 @@ export const Colors = {
     primary: '#0A84FF',
     secundary: '#c8c8c8',
     icons: '#ffffff',
+    button: 'orange'
   },
 };
