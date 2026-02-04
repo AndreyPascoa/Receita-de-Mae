@@ -37,5 +37,17 @@ export const styles = StyleSheet.create({
     subtitle: {
         fontSize: 10,
         marginBottom: 4,
+    },
+    featureIconsConatiner: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 'auto',
+        position: 'absolute',
+        right: 8,
+        bottom: 8,
+        gap: 6,
+    },
+    featureIconButton: {
+        padding: 4,
     }
 })

@@ -1,9 +1,8 @@
 import * as icons from 'lucide-react-native/icons' 
+import { FilterIcons } from './filterType';
 
 export interface CardsType {
     id: string;
     title: string;
-    iconsFilters: FilterIcons[keyof typeof icons][];
+    iconsFilters: FilterIcons[];
 }
-
-type FilterIcons = 'Beef' | 'Bird' | 'Fish' | 'Leaf';

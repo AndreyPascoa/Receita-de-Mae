@@ -31,7 +31,7 @@ export default function HomeScreen() {
             iconsFilters: ['Beef'] 
         },
         { 
-            id: '3', 
+            id: '2', 
             title: 'Frango Grelhado & Peixe Assado', 
             iconsFilters: ['Bird', 'Fish'] 
         },

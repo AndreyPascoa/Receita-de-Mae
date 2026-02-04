@@ -27,27 +27,19 @@ export default function App() {
   const SpalshAnimation = () => (
     splashComplete
       ?
-      <MainLayout>
         <HomeScreen />
-      </MainLayout>
       : <SplashComponent onComplete={setSplashComplete} />
   )
 
   function RootStack() {
     return (
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-        <Stack.Screen name="Home" component={SpalshAnimation} />
-        <Stack.Screen name="Profile" component={() => (
-          <MainLayout>
-            <ProfileScreen />
-          </MainLayout>
-        )} />
-        <Stack.Screen name="Favorites" component={() => (
-            <MainLayout>
-              <FavoriteScreen />
-            </MainLayout>
-          )} />
-      </Stack.Navigator>
+      <MainLayout>
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
+          <Stack.Screen name="Home" component={SpalshAnimation} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
+          <Stack.Screen name="Favorites" component={FavoriteScreen} />
+        </Stack.Navigator>
+      </MainLayout>
     )
   }
 
