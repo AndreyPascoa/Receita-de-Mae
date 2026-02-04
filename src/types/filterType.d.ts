@@ -1,12 +1,13 @@
-import * as icons from  'lucide-react-native/icons' 
 
 export interface FilterType {
     id: string;
     name: string;
     isPressed?: boolean;
-    icons?: keyof typeof icons;
+    icons: FilterIcons;
 }
 
 export interface FilterComponentProps extends FilterType {
     onPress: () => void;
 }
+
+export type FilterIcons = 'Beef' | 'Bird' | 'Fish' | 'Leaf';
